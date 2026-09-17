@@ -1,0 +1,11 @@
+ALTER TABLE students ENABLE ROW LEVEL SECURITY;
+
+CREATE ROLE app_read;
+
+GRANT CONNECT ON DATABASE capstone TO app_read;
+
+GRANT USAGE ON SCHEMA public TO app_read;
+
+GRANT SELECT
+ON ALL TABLES IN SCHEMA public
+TO app_read;
